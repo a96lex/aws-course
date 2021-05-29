@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AWS course - Alex</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="assets/icon.ico" />
+  </head>
+  <body>
+    <div class="header flex-h">
+      <img src="assets/aws.png" alt="logo" class="aws-logo" />
+      <h1>internal AWS Solutions Architect technical course</h1>
+      <div style="font-size: large; margin-right: 30px">Alex submission</div>
+    </div>
+    <div class="content" id="data">
+      <h1>Course overview</h1>
+    </div>
+    <div class="footer-upper flex-h">
+      <h3 style="margin-left: 40px">Made with ♡</h3>
+    </div>
+    <div class="footer-lower flex-h">
+      <div style="margin-left: 40px" id="current-year"></div>
+    </div>
+  </body>
+  <script>
+    n = new Date();
+    y = n.getFullYear();
+    document.getElementById(
+      "current-year"
+    ).innerHTML = `© ${y}, Alex Párraga Ferrer.`;
+  </script>
+  <script>
+    data = {
+      1: {
+        lessonTitle: "Simplest Architectures (aws infrastructure & S3)",
+        lessonDate: "May 28",
+      },
+      2: {
+        lessonTitle: "Compute Layer (EC2) & Database Layer (RDS, DynamoDB)",
+        lessonDate: "June 4",
+      },
+      3: {
+        lessonTitle:
+          "Networking (VPC, subnets, security groups, NAT Gateways route tables)",
+        lessonDate: "June 11",
+      },
+      4: {
+        lessonTitle:
+          "IAM & Elasticity, high availability and monitoring (IAM, Cloudwatch, CloudTrail, autoscaling)",
+        lessonDate: "June 18",
+      },
+      5: {
+        lessonTitle:
+          "Automation & Caching (Cloudformation, Cloudfront, Elasticache, memcached, DAX)",
+        lessonDate: "June 25",
+      },
+      6: {
+        lessonTitle:
+          "Decoupled architectures, microservices & serverless architectures (SQS, SNS, Lambda, API Gateway, Step Functions)",
+        lessonDate: "July 2",
+      },
+      7: {
+        lessonTitle:
+          "Disaster planning & Recovery strategies, Optimization strategies",
+        lessonDate: "July 9",
+      },
+    };
+    Object.keys(data).forEach((k) => {
+      document.getElementById(
+        "data"
+      ).innerHTML += `<div class="box"><h2>Lesson ${k}</h2><h4>${data[k].lessonTitle}</h4><div>${data[k].lessonDate}</div></div>`;
+    });
+  </script>
+</html>
